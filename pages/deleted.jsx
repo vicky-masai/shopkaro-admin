@@ -7,7 +7,7 @@ const Productlist = ({data}) => {
 
   const router = useRouter();
   const Dlt = (id)=>{
-    axios.delete(`https://lucky-clam-garb.cyclic.app/mens/${id}`)
+    axios.delete(`https://shopkaro-backend.onrender.com/mens/${id}`)
     router.push("/deleted");
 
   }
@@ -45,7 +45,7 @@ const Productlist = ({data}) => {
 export default Productlist
 
 export async function getStaticProps(context) {
-  const response = await axios.get('https://lucky-clam-garb.cyclic.app/deleted');
+  const response = await axios.get('https://shopkaro-backend.onrender.com/deleted');
   const c = response.data;
   let data = c.slice(0,13)
   return {

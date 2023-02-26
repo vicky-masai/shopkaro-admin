@@ -38,19 +38,19 @@ export default Dashboard
 
 export async function getStaticProps(context) {
     // orders api 
-    let data = await axios.get("https://lucky-clam-garb.cyclic.app/orders")
+    let data = await axios.get("https://shopkaro-backend.onrender.com/orders")
     let orders = await data.data;
 
 // all products 
-let productOld = await axios.get("https://lucky-clam-garb.cyclic.app/mens")
+let productOld = await axios.get("https://shopkaro-backend.onrender.com/mens")
 let product = await productOld.data;
 
 // total earnings 
-let earnings = await axios.get("https://lucky-clam-garb.cyclic.app/Order_completed")
+let earnings = await axios.get("https://shopkaro-backend.onrender.com/Order_completed")
 let money = await earnings.data;
 
 // total users
-let user = await axios.get("https://lucky-clam-garb.cyclic.app/users")
+let user = await axios.get("https://shopkaro-backend.onrender.com/users")
 let userD = await user.data;
     return {
       props: {orders,product,money,userD}, // will be passed to the page component as props
